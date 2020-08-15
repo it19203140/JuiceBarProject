@@ -8,4 +8,7 @@
     <color name="lightPurpleMountainMajesty">#9F86C0</color>
     <color name="lighterLilac">#BE95C4</color>
     <color name="lightestPinkLavender">#E0B1CB</color>
+    <color name="tableRowEven">#007F5F</color>
+    <color name="tableRowOdd">#BBE000</color>
+    <color name="appleGreen">#80B918</color>
 </resources>

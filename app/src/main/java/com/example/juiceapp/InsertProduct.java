@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class InsertProduct extends AppCompatActivity {
 
     DatabaseHelperClass myDb;
     EditText editName, editPrice, editIng, editRating, editType;
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_insert_product);
         myDb = new DatabaseHelperClass(this);
 
         editName = (EditText) findViewById(R.id.productName);
@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
                                 editIng.getText().toString(), editRating.getText().toString(), editType.getText().toString());
 
                         if (isInserted == true)
-                            Toast.makeText(MainActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                            Toast.makeText(InsertProduct.this, "Data Inserted", Toast.LENGTH_LONG).show();
                         else
-                            Toast.makeText(MainActivity.this, "Data Not Inserted", Toast.LENGTH_LONG).show();
+                            Toast.makeText(InsertProduct.this, "Data Not Inserted", Toast.LENGTH_LONG).show();
                     }
                 }
         );
