@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DABECA</color>
+    <color name="colorPrimaryDark">#3F334D</color>
+    <color name="colorAccent">#FF707A</color>
+    <color name="darkestViolet">#231942</color>
+    <color name="darkPurpleNavy">#5E548E</color>
+    <color name="lightPurpleMountainMajesty">#9F86C0</color>
+    <color name="lighterLilac">#BE95C4</color>
+    <color name="lightestPinkLavender">#E0B1CB</color>
+</resources>
