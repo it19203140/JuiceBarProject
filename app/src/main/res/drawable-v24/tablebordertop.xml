@@ -3,6 +3,4 @@
     android:shape="rectangle">
 
     <solid android:color="@color/appleGreen" />
-
-    <corners android:radius="@dimen/fab_margin" />
 </shape>

@@ -14,12 +14,11 @@
         android:background="@color/darkestViolet">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="600dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="32dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/darkPurpleNavy">
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"

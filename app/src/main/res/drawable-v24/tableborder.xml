@@ -9,6 +9,4 @@
     </stroke>
 
     <solid android:color="@color/tableRowOdd" />
-
-    <corners android:radius="@dimen/fab_margin" />
 </shape>

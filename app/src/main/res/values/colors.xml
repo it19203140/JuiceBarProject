@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#DABECA</color>
-    <color name="colorPrimaryDark">#3F334D</color>
+    <color name="colorPrimaryDark">#3F1D45</color>
     <color name="colorAccent">#FF707A</color>
     <color name="darkestViolet">#231942</color>
     <color name="darkPurpleNavy">#5E548E</color>
@@ -11,4 +11,7 @@
     <color name="tableRowEven">#007F5F</color>
     <color name="tableRowOdd">#BBE000</color>
     <color name="appleGreen">#80B918</color>
+    <color name="Ash">#4F858484</color>
+    <color name="AshLighter">#4A404040</color>
+    <color name="White">#FFFFFF</color>
 </resources>
