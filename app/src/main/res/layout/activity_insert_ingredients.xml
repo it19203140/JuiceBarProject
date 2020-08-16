@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertIngredients"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background2">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/logo"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="@string/enternewingredient"
+        android:textColor="#B32828"/>
+
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="45dp"
+        android:hint="@string/ingredientname"
+        android:gravity="center"
+        android:textColorHint="#941C1C"
+        android:background="#ffffff"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/ingredientnumber"
+        android:gravity="center"
+        android:textColorHint="#941C1C"
+        android:background="#ffffff"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/ingredientquantity"
+        android:gravity="center"
+        android:textColorHint="#941C1C"
+        android:background="#ffffff"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/suplliername"
+        android:gravity="center"
+        android:textColorHint="#941C1C"
+        android:background="#ffffff"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/date"
+        android:gravity="center"
+        android:textColorHint="#941C1C"
+        android:background="#ffffff"/>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="italic"
+        android:text="@string/addingredient"
+        android:background="#F37777"/>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

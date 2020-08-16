@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">JuiceBarProject</string>
+    <string name="gangulal">Gangulal</string>
+    <string name="ingredientname">Name</string>
+    <string name="ingredientnumber">Number</string>
+    <string name="ingredientquantity">Quantity</string>
+    <string name="suplliername">Supllier Name</string>
+    <string name="date">Date</string>
+    <string name="addingredient">Add Ingredient</string>
+    <string name="enternewingredient">Enter New Ingredient</string>
+    <string name="updateingredients" translatable="false">Update Ingredient</string>
+    <string name="update">Update</string>
+    <string name="change">Change</string>
+    <string name="ordernumber">Order Number</string>
+    <string name="orderdescription">Description</string>
+    <string name="orderquantity">Quantity</string>
+    <string name="finishedorder">Finished</string>
+    <string name="completedorders">Completed Orders</string>
+    <string name="ingredientstable">Ingredients Table</string>
+    <string name="done">Done</string>
+    <string name="ongoingorders">Ongoing Orders</string>
+    <string name="delete">Delete</string>
+    <string name="orderstatus">Order Status</string>
+</resources>
