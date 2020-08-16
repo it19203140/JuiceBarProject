@@ -57,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/AshLighter"
                 android:hint="@string/products"
-                android:queryHint="@string/products" />
+                android:queryHint="@string/products"></SearchView>
 
             <ImageView
                 android:layout_width="100px"
@@ -77,8 +77,7 @@
         <RelativeLayout
             android:layout_width="390dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="">
+            android:layout_gravity="center">
 
             <TableLayout
                 android:layout_width="match_parent"

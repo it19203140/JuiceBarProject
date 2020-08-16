@@ -11,13 +11,15 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ViewProducts"></activity>
         <activity android:name=".AdminHome_Dashboard">
+
+        </activity>
+        <activity android:name=".InsertProduct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InsertProduct"></activity>
     </application>
 
 </manifest>
