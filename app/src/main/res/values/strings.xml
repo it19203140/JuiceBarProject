@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Juice home</string>
+    <string name="we_juice">We juice</string>
+    <string name="trending_this_week">Trending this week</string>
+    <string name="most_popular">Most popular</string>
+    <string name="_1">1</string>
+    <string name="rs_1050">Rs.1050</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="your_order">Your order</string>
+    <string name="confirm_your_details">Confirm your details</string>
+    <string name="edit">Edit</string>
+    <string name="_1_kitkat_milkshake">1.Kitkat milkshake</string>
+    <string name="_2_oreo_milkshake">2.Oreo milkshake</string>
+    <string name="_3_pineapple_juice">3.Pineapple juice</string>
+    <string name="customer_name">Customer name</string>
+    <string name="customer_address">Customer address</string>
+    <string name="confirm_order">Confirm order</string>
+    <string name="cancel_order">Cancel order</string>
+    <string name="cart">Cart</string>
+    <string name="kitkat_milkshake">Kitkat milkshake</string>
+    <string name="oreo_milkshake">Oreo milkshake</string>
+
+</resources>
