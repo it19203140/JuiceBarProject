@@ -20,5 +20,10 @@
     <string name="cart">Cart</string>
     <string name="kitkat_milkshake">Kitkat milkshake</string>
     <string name="oreo_milkshake">Oreo milkshake</string>
+    <string name="rs_400">Rs 400</string>
+    <string name="rs_250">Rs 250</string>
+    <string name="pineapple_juice">Pineapple Juice</string>
+    <string name="choc_milkshake">Choc Milkshake</string>
+    <string name="rs_350">Rs 350</string>
 
 </resources>

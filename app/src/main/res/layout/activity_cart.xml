@@ -32,7 +32,7 @@
         android:fontFamily="@font/open_sans_bold"
         android:text="@string/cart"
         android:textColor="#333333"
-        android:textSize="45"
+        android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton18"
@@ -410,10 +410,12 @@
         android:id="@+id/button2"
         android:layout_width="149dp"
         android:layout_height="41dp"
+        android:layout_marginBottom="16dp"
         android:background="#14E41C"
         android:text="Place order"
         android:textColor="#333333"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="674dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

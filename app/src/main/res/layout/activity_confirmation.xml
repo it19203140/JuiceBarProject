@@ -338,14 +338,6 @@
         app:layout_constraintStart_toEndOf="@+id/textView31"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="191dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="502dp">
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="199dp"
         android:layout_height="48dp"
