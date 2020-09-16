@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">JuiceApp</string>
     <string name="product_insert_title">Insert Product</string>
-    <string name="PRODUCT_NAME">Product Name</string>
-    <string name="PRICE">Product Price</string>
-    <string name="INGREDIENTS">Product Ingredients</string>
-    <string name="RATING">Product Rating</string>
-    <string name="TYPE">Product Type</string>
-    <string name="PRODUCT_ID">Product ID</string>
+    <string name="PRODUCT_NAME">Product</string>
+    <string name="PRICE">Price</string>
+    <string name="INGREDIENTS">Ingredients</string>
+    <string name="RATING">Rating</string>
+    <string name="TYPE">Type</string>
+    <string name="PRODUCT_ID">ProdID</string>
     <string name="add_product_to_db">Submit</string>
     <string name="upload_image_from_db">Upload</string>
     <string name="dashboard">Dashboard</string>

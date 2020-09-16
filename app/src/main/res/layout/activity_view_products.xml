@@ -9,7 +9,7 @@
     tools:context=".ViewProducts">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:alpha="0.90"
         android:background="@color/lightestPinkLavender"
@@ -17,7 +17,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="61dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="10dp"
@@ -28,15 +28,15 @@
                 android:layout_height="wrap_content"
                 android:alpha="1"
                 android:background="@color/lighterLilac"
-                android:padding="20px"
+                android:padding="20dp"
                 android:text="@string/products"
                 android:textSize="30sp">
 
             </TextView>
 
             <ImageView
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/profilepic">
 
@@ -46,43 +46,41 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="61dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="32dp">
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
 
             <SearchView
-                android:layout_width="875px"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@color/AshLighter"
                 android:hint="@string/products"
-                android:queryHint="@string/products"></SearchView>
+                android:queryHint="@string/products">
+
+            </SearchView>
 
             <ImageView
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
                 android:layout_gravity="right"
-                android:layout_marginStart="22px"
-                android:layout_marginEnd="22px"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="9dp"
-                android:src="@drawable/addicon" />
+                android:src="@drawable/addicon"/>
 
         </RelativeLayout>
 
 
         <RelativeLayout
-            android:layout_width="390dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp">
 
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20px"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:padding="5px">
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -98,54 +96,42 @@
 
                 </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-                <TableRow android:background="@drawable/tablebordertop">
+                <TableRow
+                    android:background="@drawable/tablebordertop" >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
+                        android:textSize="20sp"
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_ID"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="@string/PRODUCT_NAME"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20sp"
                         android:gravity="center"
-                        android:padding="15px"
-                        android:text="@string/TYPE"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="@string/PRICE"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="@string/INGREDIENTS"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="center"
-                        android:text="@string/RATING"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:padding="2dp"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
                         android:text="Action"
                         android:textStyle="bold"></TextView>
                 </TableRow>
@@ -153,374 +139,304 @@
                 <TableRow android:background="@color/AshLighter">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="...." />
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_ID"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_NAME"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRICE"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/editicon" />
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/delete" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:src="@drawable/peekicon" />
                     </LinearLayout>
 
                 </TableRow>
 
-                <TableRow android:background="@color/AshLighter">>
+                <TableRow android:background="@color/AshLighter">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="...." />
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_ID"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_NAME"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRICE"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/editicon" />
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/delete" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:src="@drawable/peekicon" />
                     </LinearLayout>
 
                 </TableRow>
 
-                <TableRow android:background="@color/AshLighter">>
+                <TableRow android:background="@color/AshLighter">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="...." />
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_ID"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_NAME"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRICE"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/editicon" />
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/delete" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:src="@drawable/peekicon" />
                     </LinearLayout>
 
                 </TableRow>
 
-                <TableRow android:background="@color/AshLighter">>
+                <TableRow android:background="@color/AshLighter">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="...." />
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_ID"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_NAME"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRICE"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/editicon" />
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/delete" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:src="@drawable/peekicon" />
                     </LinearLayout>
 
                 </TableRow>
 
-                <TableRow android:background="@color/AshLighter">>
+                <TableRow android:background="@color/AshLighter">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="...." />
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_ID"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRODUCT_NAME"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
                         android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="center"
-                        android:text="...." />
+                        android:padding="10dp"
+                        android:text="@string/PRICE"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/editicon" />
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
                             android:src="@drawable/delete" />
-                    </LinearLayout>
-
-                </TableRow>
-
-                <TableRow android:background="@color/AshLighter">>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:gravity="center"
-                        android:text="...." />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
-                            android:src="@drawable/editicon" />
-
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_weight="1"
-                            android:gravity="left"
-                            android:src="@drawable/delete" />
+                            android:src="@drawable/peekicon" />
                     </LinearLayout>
 
                 </TableRow>
 
             </TableLayout>
-
-            <ImageView
-                android:layout_width="362dp"
-                android:layout_height="140dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="17dp"
-                android:layout_marginBottom="38dp"
-                android:backgroundTint="@color/appleGreen"
-                android:src="@drawable/menuecard" />
         </RelativeLayout>
 
 
