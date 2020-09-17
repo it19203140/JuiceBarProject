@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">JuiceApp</string>
+    
+    <string-array name="types">
+        <item>Juice</item>
+        <item>Smoothies</item>
+        <item>Other</item>
+    </string-array>
+    
     <string name="product_insert_title">Insert Product</string>
     <string name="PRODUCT_NAME">Product</string>
     <string name="PRICE">Price</string>

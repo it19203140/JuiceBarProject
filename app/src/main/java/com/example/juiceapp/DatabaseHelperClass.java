@@ -2,12 +2,13 @@ package com.example.juiceapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class DatabaseHelperClass extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "Juiceapp.db";
+    public static final String DATABASE_NAME = "juiceapp.db";
     public static final String TABLE_NAME = "product_table";
     public static final String COL_0 = "PRODUCT_ID";
     public static final String COL_1 = "PRODUCT_NAME";
@@ -23,12 +24,12 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (PRODUCT_ID INTEGER PRIMARY KEY AUTOINCREMENT, PRODUCT_NAME TEXT, PRICE DOUBLE, INGREDIENTS TEXT, RATING INTEGER, TYPE TEXT)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (PRODUCT_ID INTEGER PRIMARY KEY AUTOINCREMENT, PRODUCT_NAME VARCHAR(20), PRICE REAL, INGREDIENTS TEXT, RATING INTEGER, TYPE VARCHAR(20))");
 
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
@@ -48,5 +49,11 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
             return false;
         } else
             return true;
+    }
+
+    public Cursor getAllProducts() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        return res;
     }
 }
