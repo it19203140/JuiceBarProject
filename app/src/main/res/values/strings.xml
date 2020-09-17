@@ -107,4 +107,5 @@
     <string name="profPic">ProfilePic</string>
     <string name="editProfile">Edit Profile</string>
     <string name="aboutUs">About Us</string>
+    <string name="PEEK_PRODUCT">Peek Product</string>
 </resources>
