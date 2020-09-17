@@ -37,7 +37,8 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/profPic"
                 android:src="@drawable/profilepic">
 
             </ImageView>
@@ -61,10 +62,12 @@
             </SearchView>
 
             <ImageView
+                android:id="@+id/imageViewAddProductID"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="right"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:contentDescription="Add product icon"
                 android:src="@drawable/addicon"/>
 
         </RelativeLayout>
@@ -81,13 +84,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:padding="5px">
+                android:padding="5dp">
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
                     android:background="@drawable/topnav"
                     app:itemIconTint="@color/lightPurpleMountainMajesty"
@@ -133,7 +134,7 @@
                         android:textSize="20sp"
                         android:layout_weight="1"
                         android:text="Action"
-                        android:textStyle="bold"></TextView>
+                        android:textStyle="bold"/>
                 </TableRow>
 
                 <TableRow android:background="@color/AshLighter">
@@ -177,6 +178,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Edit Icon"
                             android:src="@drawable/editicon" />
 
                         <ImageView
@@ -184,6 +186,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Delete Icon"
                             android:src="@drawable/delete" />
 
                         <ImageView
@@ -191,6 +194,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Peek Icon"
                             android:src="@drawable/peekicon" />
                     </LinearLayout>
 
@@ -237,6 +241,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Edit Icon"
                             android:src="@drawable/editicon" />
 
                         <ImageView
@@ -244,6 +249,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Delete Icon"
                             android:src="@drawable/delete" />
 
                         <ImageView
@@ -251,6 +257,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Peek Icon"
                             android:src="@drawable/peekicon" />
                     </LinearLayout>
 
@@ -297,6 +304,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Edit Icon"
                             android:src="@drawable/editicon" />
 
                         <ImageView
@@ -304,6 +312,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Delete Icon"
                             android:src="@drawable/delete" />
 
                         <ImageView
@@ -311,6 +320,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Peek Icon"
                             android:src="@drawable/peekicon" />
                     </LinearLayout>
 
@@ -357,6 +367,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Edit Icon"
                             android:src="@drawable/editicon" />
 
                         <ImageView
@@ -364,6 +375,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Delete Icon"
                             android:src="@drawable/delete" />
 
                         <ImageView
@@ -371,6 +383,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Peek Icon"
                             android:src="@drawable/peekicon" />
                     </LinearLayout>
 
@@ -417,6 +430,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Edit Icon"
                             android:src="@drawable/editicon" />
 
                         <ImageView
@@ -424,6 +438,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Delete Icon"
                             android:src="@drawable/delete" />
 
                         <ImageView
@@ -431,6 +446,7 @@
                             android:layout_height="25dp"
                             android:layout_weight="1"
                             android:gravity="left"
+                            android:contentDescription="Peek Icon"
                             android:src="@drawable/peekicon" />
                     </LinearLayout>
 

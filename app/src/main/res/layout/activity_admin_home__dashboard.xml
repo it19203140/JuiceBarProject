@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:alpha="0.90"
         android:background="@color/lightestPinkLavender"
         android:orientation="vertical">
@@ -26,16 +26,17 @@
                 android:layout_height="wrap_content"
                 android:alpha="1"
                 android:background="@color/lighterLilac"
-                android:padding="20px"
+                android:padding="20dp"
                 android:text="@string/dashboard"
                 android:textSize="30sp">
 
             </TextView>
 
             <ImageView
-                android:layout_width="62dp"
-                android:layout_height="62dp"
-                android:layout_alignParentRight="true"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="Profile Picture"
                 android:src="@drawable/profilepic">
 
             </ImageView>
@@ -50,9 +51,11 @@
             android:background="@color/darkPurpleNavy"
             android:columnCount="2"
             android:columnOrderPreserved="false"
-            android:rowCount="2">
+            android:rowCount="2"
+            android:layout_marginTop="16dp">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewInquiryID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -60,7 +63,9 @@
                 android:layout_margin="12dp"
                 android:elevation="6dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -72,7 +77,8 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/inq" />
+                        android:src="@drawable/inq"
+                        android:contentDescription="InquiryImage"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -80,11 +86,12 @@
                         android:layout_marginTop="12dp"
                         android:text="@string/inquiries"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="18sp" />
+                        android:textSize="18sp" > </TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewOrdersID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -92,7 +99,9 @@
                 android:layout_margin="12dp"
                 android:elevation="6dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -104,7 +113,8 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/orders" />
+                        android:src="@drawable/orders"
+                        android:contentDescription="OrdersImage"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -112,11 +122,13 @@
                         android:layout_marginTop="12dp"
                         android:text="@string/orders"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="18sp" />
+                        android:textSize="18sp" > </TextView>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewProductsID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -124,7 +136,9 @@
                 android:layout_margin="12dp"
                 android:elevation="6dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -136,7 +150,8 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/products" />
+                        android:src="@drawable/products"
+                        android:contentDescription="ProductsImage"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -144,11 +159,12 @@
                         android:layout_marginTop="12dp"
                         android:text="@string/products"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="18sp" />
+                        android:textSize="18sp" ></TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewIngredientsID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -156,7 +172,9 @@
                 android:layout_margin="12dp"
                 android:elevation="6dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -168,15 +186,17 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/ingredients" />
+                        android:src="@drawable/ingredients"
+                        android:contentDescription="IngredientsImage"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Ingredients"
+                        android:text="@string/INGREDIENTS"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="18sp" />
+                        android:textSize="18sp" ></TextView>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -188,9 +208,12 @@
                 android:layout_margin="12dp"
                 android:elevation="6dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
+                    android:id="@+id/cardViewEditProfileID"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -200,19 +223,21 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:contentDescription="EditProfilePicture"
                         android:src="@drawable/editprofile" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Edit Profile"
+                        android:text="@string/editProfile"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="18sp" />
+                        android:textSize="18sp" ></TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewAboutUsID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -220,7 +245,9 @@
                 android:layout_margin="12dp"
                 android:elevation="6dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -232,15 +259,17 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:contentDescription="AboutUsImage"
                         android:src="@drawable/aboutus" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="About Us"
+                        android:text="@string/aboutUs"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="18sp" />
+                        android:textSize="18sp" ></TextView>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
