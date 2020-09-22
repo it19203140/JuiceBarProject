@@ -70,10 +70,11 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         product.setRating(cursor.getString(4));
         product.setType(cursor.getString(5));
 
+        cursor.close();
         return product;
     }
 
-    public void updateProduct(Product product) {
+    public void updateProduct(Product product, int position) {
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -88,7 +89,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         statement.bindString(3, product.getIngredients());
         statement.bindString(4, product.getRating());
         statement.bindString(5, product.getType());
-        statement.bindDouble(6, Double.parseDouble(product.getID()));
+        statement.bindDouble(6, position);
 
         statement.execute();
         db.close();
@@ -99,15 +100,10 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
         SQLiteStatement statement = db.compileStatement(deleteQuery);
         statement.clearBindings();
-        statement.bindDouble(1,(double) id);
+        statement.bindDouble(1,id);
 
         statement.execute();
         db.close();
-    }
-
-    public void queryData(String SQL) {
-        SQLiteDatabase database = getWritableDatabase();
-        database.execSQL(SQL);
     }
 
     public Cursor getProduct(String SQL) {
@@ -118,7 +114,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
 
     public ArrayList<Product> getAllProducts() {
-        ArrayList<Product> prodList = new ArrayList<Product>();
+        ArrayList<Product> prodList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -136,6 +132,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+        cursor.close();
         return prodList;
     }
 }

@@ -9,17 +9,21 @@ public class Product {
     private String ingredients;
 
     public Product() {
-        this.ID = ID;
-        this.name = name;
-        this.type = type;
-        this.price = price;
-        this.rating = rating;
     }
 
 
 
+
     public Product(String name, String type, String price, String rating, String ingredients) {
-        this.ID = ID;
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        this.rating = rating;
+        this.ingredients = ingredients;
+    }
+
+    public Product(String id, String name, String type, String price, String rating, String ingredients) {
+        this.ID = id;
         this.name = name;
         this.type = type;
         this.price = price;

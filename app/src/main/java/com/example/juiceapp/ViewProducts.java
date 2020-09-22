@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.security.ProtectionDomain;
 import java.util.ArrayList;
 
 public class ViewProducts extends AppCompatActivity {
@@ -78,24 +81,24 @@ public class ViewProducts extends AppCompatActivity {
                         if (i == 0) {
                             //Update
                             Cursor cursor = db.getProduct("SELECT PRODUCT_ID FROM product_table");
-                            ArrayList<Integer> prodID = new ArrayList<Integer>();
+                            ArrayList<String> prodID = new ArrayList<>();
                             while (cursor.moveToNext()) {
-                                int val = Integer.parseInt(cursor.getString(0));
-                                prodID.add(val);
+                                prodID.add(cursor.getString(0));
                             }
                             //show update dialog
-                            showDialogUpdate(ViewProducts.this,prodID.get(position));
+                            int x = Integer.parseInt(prodID.get(position));
+                            showDialogUpdate(ViewProducts.this,x);
 
                         }
                         if (i == 1){
                             //Delete
                             Cursor cursor = db.getProduct("SELECT PRODUCT_ID FROM product_table");
-                            ArrayList<Integer> prodID = new ArrayList<Integer>();
+                            ArrayList<String> prodID = new ArrayList<>();
                             while (cursor.moveToNext()) {
-                                int val = Integer.parseInt(cursor.getString(0));
-                                prodID.add(val);
+                                prodID.add(cursor.getString(0));
                             }
-                            showDialogDelete(prodID.get(position));
+                            int x = Integer.parseInt(prodID.get(position));
+                            showDialogDelete(x);
                         }
                     }
                 });
@@ -105,7 +108,7 @@ public class ViewProducts extends AppCompatActivity {
         });
     }
 
-    private void showDialogDelete(int id) {
+    private void showDialogDelete(final int productID) {
         AlertDialog.Builder dialogDelete = new AlertDialog.Builder(ViewProducts.this);
         dialogDelete.setTitle("Warning !");
         dialogDelete.setMessage("Are you sure you want to delete ?");
@@ -113,12 +116,13 @@ public class ViewProducts extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 try {
-                    db.deleteProduct(i);
+                    db.deleteProduct(productID);
                     Toast.makeText(ViewProducts.this, "Deleted product", Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e) {
                     Log.e("Error", e.getMessage());
                 }
+                updateProductList();
             }
         });
         dialogDelete.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -142,28 +146,38 @@ public class ViewProducts extends AppCompatActivity {
         final EditText editType = dialog.findViewById(R.id.updateProductType);
         Button updateBtn = dialog.findViewById(R.id.updateProductBtn);
 
+        //get clicked row data from sqlite
+        Product product;
+        product = db.getProductViaID(position);
+        editName.setText(product.getName());
+        editPrice.setText(product.getPrice());
+        editRating.setText(product.getRating());
+        editIngredients.setText(product.getIngredients());
+        editType.setText(product.getType());
+
         //Setting width of dialog
         int width = (int) (activity.getResources().getDisplayMetrics().widthPixels*0.95);
 
         //Setting height of dialog
         int height = (int) (activity.getResources().getDisplayMetrics().heightPixels*0.8);
+
         dialog.getWindow().setLayout(width, height);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String name = editName.getText().toString().trim();
+                String ingredients = editIngredients.getText().toString().trim();
+                String price = editPrice.getText().toString().trim();
+                String rating = editRating.getText().toString().trim();
+                String type = editType.getText().toString().trim();
+                Product product = new Product(name, type, price, rating, ingredients);
                 try {
-                    String name = editName.getText().toString().trim();
-                    String ingredients = editIngredients.getText().toString().trim();
-                    String price = editPrice.getText().toString().trim();
-                    String rating = editRating.getText().toString().trim();
-                    String type = editType.getText().toString().trim();
-
-                    Product product = new Product(name, type, price, rating, ingredients);
-                    db.updateProduct(product);
+                    db.updateProduct(product, position);
                     dialog.dismiss();
-                    Toast.makeText(ViewProducts.this, "Updated details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Updated details", Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception error) {
                     Log.e("Update Unsuccessfull", error.getMessage());
@@ -180,20 +194,16 @@ public class ViewProducts extends AppCompatActivity {
         Cursor cursor = db.getProduct("SELECT * FROM product_table");
         products.clear();
 
-        if (cursor.moveToFirst()) {
-            do {
-                Product product = new Product();
-                product.setID(cursor.getString(0));
-                product.setName(cursor.getString(1));
-                product.setPrice(cursor.getString(2));
-                product.setIngredients(cursor.getString(3));
-                product.setRating(cursor.getString(4));
-                product.setType(cursor.getString(5));
-                products.add(product);
-            } while (cursor.moveToNext());
+        while(cursor.moveToNext()) {
+            String id = cursor.getString(0);
+            String name = cursor.getString(1);
+            String price = cursor.getString(2);
+            String ingredients = cursor.getString(3);
+            String rating = cursor.getString(4);
+            String type = cursor.getString(5);
+
+            products.add(new Product(id, name, type, price, rating, ingredients));
         }
-
         adaper.notifyDataSetChanged();
-
     }
 }
