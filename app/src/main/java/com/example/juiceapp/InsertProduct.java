@@ -1,5 +1,6 @@
 package com.example.juiceapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,18 +13,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class InsertProduct extends AppCompatActivity {
 
-    DatabaseHelperClass myDb;
-    EditText editName, editPrice, editIng, editRating;
-    Button btnAddProduct;
-    Spinner spinner_productType;
+    public static DatabaseHelperClass myDb;
+    private EditText editName, editPrice, editIng, editRating;
+    private Button btnAddProduct;
+    private Spinner spinner_productType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_product);
+
+        //initialized database
         myDb = new DatabaseHelperClass(this);
         initializeObjects();
-
         addProduct();
     }
 
@@ -48,16 +50,25 @@ public class InsertProduct extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String type = spinner_productType.getSelectedItem().toString();
+                        String name = editName.getText().toString();
+                        String price = editPrice.getText().toString();
+                        String ingredients = editIng.getText().toString();
+                        String rating = editRating.getText().toString();
 
-                        String productType = spinner_productType.getSelectedItem().toString();
+                        Product product = new Product(name, type, price, rating, ingredients);
 
-                        boolean isInserted = myDb.insertProduct(editName.getText().toString(), editPrice.getText().toString(),
-                                editIng.getText().toString(), editRating.getText().toString(), productType);
+                            boolean isInserted = myDb.insertProduct(product);
 
-                        if (isInserted)
+                        if (isInserted) {
                             Toast.makeText(InsertProduct.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(InsertProduct.this, ViewProducts.class);
+                            startActivity(intent);
+                        }
                         else
                             Toast.makeText(InsertProduct.this, "Data Not Inserted", Toast.LENGTH_LONG).show();
+
+
                     }
                 }
         );

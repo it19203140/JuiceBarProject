@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">JuiceApp</string>
-    
+
     <string-array name="types">
         <item>Juice</item>
         <item>Smoothies</item>
         <item>Other</item>
     </string-array>
-    
+
     <string name="product_insert_title">Insert Product</string>
     <string name="PRODUCT_NAME">Product</string>
     <string name="PRICE">Price</string>
@@ -115,4 +115,8 @@
     <string name="editProfile">Edit Profile</string>
     <string name="aboutUs">About Us</string>
     <string name="PEEK_PRODUCT">Peek Product</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="product_update_title">Update Product</string>
+    <string name="update_product_to_db">Update</string>
 </resources>
