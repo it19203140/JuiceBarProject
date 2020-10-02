@@ -8,11 +8,29 @@ public class Product {
     private String rating;
     private String ingredients;
 
-    public Product() {
+    public static double[] calculateProductPrice(double price, double vat, double margin, double serviceTax){
+
+        double[] arr = new double[4];
+
+        arr[0] = price;
+        arr[1] = arr[0] + (arr[0] * margin)/100;
+        arr[2] = arr[1] + (arr[1] * serviceTax)/100;
+        arr[3] = arr[2] + (arr[2] * vat)/100;
+
+        return arr;
     }
 
+    public static int sellingPrice(double[] arr) {
+        int count = 0;
+        for(int x= 0 ; x<4; x++) {
+            count = (int) (count + arr[x]);
+        }
 
+        return count;
+    }
 
+    public Product() {
+    }
 
     public Product(String name, String type, String price, String rating, String ingredients) {
         this.name = name;

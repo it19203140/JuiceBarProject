@@ -5,10 +5,10 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,7 +21,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.security.ProtectionDomain;
 import java.util.ArrayList;
 
 public class ViewProducts extends AppCompatActivity {
@@ -70,9 +69,9 @@ public class ViewProducts extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long l) {
                 //Alert dialog to display options of update and delete
-                CharSequence[] items = {"Update", "Delete"};
+                CharSequence[] items = {"Update", "Delete", "Peek"};
 
-                AlertDialog.Builder dialog = new AlertDialog.Builder(ViewProducts.this);
+                final AlertDialog.Builder dialog = new AlertDialog.Builder(ViewProducts.this);
 
                 dialog.setTitle("Choose an action");
                 dialog.setItems(items, new DialogInterface.OnClickListener() {
@@ -80,7 +79,7 @@ public class ViewProducts extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (i == 0) {
                             //Update
-                            Cursor cursor = db.getProduct("SELECT PRODUCT_ID FROM product_table");
+                            Cursor cursor = db.getAllProductIDs();
                             ArrayList<String> prodID = new ArrayList<>();
                             while (cursor.moveToNext()) {
                                 prodID.add(cursor.getString(0));
@@ -92,13 +91,42 @@ public class ViewProducts extends AppCompatActivity {
                         }
                         if (i == 1){
                             //Delete
-                            Cursor cursor = db.getProduct("SELECT PRODUCT_ID FROM product_table");
+                            Cursor cursor = db.getAllProductIDs();
                             ArrayList<String> prodID = new ArrayList<>();
                             while (cursor.moveToNext()) {
                                 prodID.add(cursor.getString(0));
                             }
                             int x = Integer.parseInt(prodID.get(position));
                             showDialogDelete(x);
+                        }
+
+                        if(i == 2){
+                            //Peek
+                            AlertDialog.Builder dialogPeek = new AlertDialog.Builder(ViewProducts.this);
+                            dialog.setTitle("Peek");
+                            dialog.setMessage("Do you wish to get more information on the product ?");
+                            dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Product product = new Product();
+                                    product = adaper.getItem(position);
+                                    Intent intent = new Intent(ViewProducts.this,PeekProductActivity.class);
+                                    intent.putExtra("ProductID", product.getID());
+                                    intent.putExtra("ProductName", product.getName());
+                                    intent.putExtra("ProductIngredients", product.getIngredients());
+                                    intent.putExtra("ProductType", product.getType());
+                                    intent.putExtra("ProductRating", product.getRating());
+                                    intent.putExtra("ProductPrice", product.getPrice());
+                                    startActivity(intent);
+                                }
+                            });
+                            dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
+                            dialog.show();
                         }
                     }
                 });
@@ -173,37 +201,90 @@ public class ViewProducts extends AppCompatActivity {
                 String price = editPrice.getText().toString().trim();
                 String rating = editRating.getText().toString().trim();
                 String type = editType.getText().toString().trim();
-                Product product = new Product(name, type, price, rating, ingredients);
-                try {
-                    db.updateProduct(product, position);
-                    dialog.dismiss();
-                    Toast.makeText(getApplicationContext(), "Updated details", Toast.LENGTH_SHORT).show();
+                
+                boolean check = validationSuccessful(name, price, ingredients, rating);
+                
+                if(check) {
+                    Product product = new Product(name, type, price, rating, ingredients);
+                    try {
+                        db.updateProduct(product, position);
+                        dialog.dismiss();
+                        Toast.makeText(getApplicationContext(), "Updated details", Toast.LENGTH_SHORT).show();
+                    } catch (Exception error) {
+                        Log.e("Update Unsuccessfull", error.getMessage());
+                    }
+                    updateProductList();
                 }
-                catch (Exception error) {
-                    Log.e("Update Unsuccessfull", error.getMessage());
+                else {
+                    Toast.makeText(ViewProducts.this, "Details not updated", Toast.LENGTH_SHORT).show();
                 }
-                updateProductList();
             }
         });
 
     }
 
+
+
     private void updateProductList() {
         //get all data from sqlite again
 
-        Cursor cursor = db.getProduct("SELECT * FROM product_table");
+        ArrayList <Product> updatedProducts;
+        updatedProducts = db.getAllProducts();
         products.clear();
 
-        while(cursor.moveToNext()) {
-            String id = cursor.getString(0);
-            String name = cursor.getString(1);
-            String price = cursor.getString(2);
-            String ingredients = cursor.getString(3);
-            String rating = cursor.getString(4);
-            String type = cursor.getString(5);
-
-            products.add(new Product(id, name, type, price, rating, ingredients));
+        for(Product P : updatedProducts) {
+            products.add(P);
         }
         adaper.notifyDataSetChanged();
+    }
+
+    public boolean validationSuccessful (String name, String price, String ingredients, String rating ) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(ViewProducts.this);
+
+        if(TextUtils.isEmpty(name)) {
+            alertDialog.setMessage("The name field is empty ! Please re-enter");
+            alertDialog.setTitle("Invalid Product Name");
+            alertDialog.setPositiveButton("OK", null);
+            alertDialog.setCancelable(true);
+            alertDialog.show();
+            return false;
+        } else if (TextUtils.isEmpty(price)) {
+            alertDialog.setMessage("The price field is empty ! Please re-enter");
+            alertDialog.setTitle("Invalid Product Price");
+            alertDialog.setPositiveButton("OK", null);
+            alertDialog.setCancelable(true);
+            alertDialog.show();
+            return false;
+        } else if (Double.parseDouble(price) == 0 || Double.parseDouble(price) < 0 ) {
+            alertDialog.setMessage("The price "+price+" is invalid ! Please re-enter");
+            alertDialog.setTitle("Invalid Product Price");
+            alertDialog.setPositiveButton("OK", null);
+            alertDialog.setCancelable(true);
+            alertDialog.show();
+            return false;
+        } else if (TextUtils.isEmpty(ingredients)) {
+            alertDialog.setMessage("The Ingredients field is empty ! Please re-enter");
+            alertDialog.setTitle("Invalid Product Ingredients");
+            alertDialog.setPositiveButton("OK", null);
+            alertDialog.setCancelable(true);
+            alertDialog.show();
+            return false;
+        } else if (TextUtils.isEmpty(rating)) {
+            alertDialog.setMessage("The rating field is empty ! Please re-enter");
+            alertDialog.setTitle("Invalid Product Rating");
+            alertDialog.setPositiveButton("OK", null);
+            alertDialog.setCancelable(true);
+            alertDialog.show();
+            return false;
+        } else if ( Double.parseDouble(rating) < 0 ||  Double.parseDouble(rating) == 0) {
+            alertDialog.setMessage("The rating "+rating+" is invalid ! Please re-enter");
+            alertDialog.setTitle("Invalid Product Rating");
+            alertDialog.setPositiveButton("OK", null);
+            alertDialog.setCancelable(true);
+            alertDialog.show();
+            return false;
+        }
+        else
+            return true;
     }
 }

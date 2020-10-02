@@ -46,8 +46,8 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:padding="25dp"
+            android:layout_margin="15dp"
+            android:padding="15dp"
             android:background="@color/darkestViolet">
 
 
@@ -68,17 +68,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/productImageID"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="16dp"
-                        android:contentDescription="AboutUsImage"
-                        android:src="@drawable/aboutus"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
                     <TextView
                         android:id="@+id/TextViewPeekProdID"
                         android:layout_width="wrap_content"
@@ -87,22 +76,22 @@
                         android:layout_marginTop="16dp"
                         android:text="@string/PRODUCT_ID"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/productImageID"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/TextViewPeekProdIDValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
                         android:text="@string/PRODUCT_ID"
                         android:textColor="@color/cardview_dark_background"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/productImageID" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/TextViewPeekProdName"
@@ -112,7 +101,7 @@
                         android:layout_marginTop="8dp"
                         android:text="@string/PRODUCT_NAME"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdID" />
@@ -125,7 +114,7 @@
                         android:layout_marginEnd="16dp"
                         android:text="@string/PRODUCT_NAME"
                         android:textColor="@color/cardview_dark_background"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdIDValue" />
 
@@ -138,7 +127,7 @@
                         android:layout_marginTop="8dp"
                         android:text="@string/TYPE"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdName" />
@@ -151,7 +140,7 @@
                         android:layout_marginEnd="16dp"
                         android:text="@string/TYPE"
                         android:textColor="@color/cardview_dark_background"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdNameValue" />
 
@@ -163,7 +152,7 @@
                         android:layout_marginTop="8dp"
                         android:text="@string/PRICE"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdTyoe" />
@@ -176,7 +165,7 @@
                         android:layout_marginEnd="16dp"
                         android:text="@string/PRICE"
                         android:textColor="@color/cardview_dark_background"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdTyoeValue" />
 
@@ -185,14 +174,12 @@
                         android:id="@+id/TextViewPeekProdIngredientsValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
-                        android:text=""
+                        android:text="@string/INGREDIENTS"
                         android:textColor="@color/cardview_dark_background"
-                        android:textSize="25sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdPriceValue" />
-
+                        android:textSize="22sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/TextViewPeekProdIng"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
                     <TextView
                         android:id="@+id/TextViewPeekProdRating"
@@ -200,14 +187,27 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
                         android:text="@string/RATING"
                         android:textColor="@color/darkestViolet"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdPrice" />
+
+                    <TextView
+                        android:id="@+id/TextViewPeekProdIng"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/INGREDIENTS"
+                        android:textColor="@color/darkestViolet"
+                        android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdPrice" />
+                        app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdRating" />
 
                     <TextView
                         android:id="@+id/TextViewPeekProdRatingValue"
@@ -217,7 +217,7 @@
                         android:layout_marginEnd="16dp"
                         android:text="@string/RATING"
                         android:textColor="@color/cardview_dark_background"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/TextViewPeekProdPriceValue" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -243,29 +243,140 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/productIngredientsImageID"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="16dp"
-                        android:contentDescription="AboutUsImage"
-                        android:src="@drawable/ingredients"
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/final_price"
+                        android:textColor="@color/darkestViolet"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/TextViewPeekIngredients"
+                        android:id="@+id/prodPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/INGREDIENTS"
-                        android:textColor="@color/darkestViolet"
-                        android:textSize="25sp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/entered_price"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/prodPriceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="32dp"
+                        android:text="@string/PRICE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/margin"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/prodPrice" />
+
+                    <TextView
+                        android:id="@+id/marginValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:text="@string/PRICE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/margin"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/serviceTax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_tax"
+                        android:textSize="18sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="32dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/margin" />
+
+                    <TextView
+                        android:id="@+id/serviceTaxValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:text="@string/PRICE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/serviceTax"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/VAT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vat"
+                        android:textSize="18sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="32dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/serviceTax" />
+
+                    <TextView
+                        android:id="@+id/VATValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:text="@string/PRICE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/VAT"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/finalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
+                        android:text="@string/selling_price"
+                        android:textSize="18sp"
+                        android:textColor="#8B0000"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/productIngredientsImageID"/>
+                        app:layout_constraintTop_toBottomOf="@+id/VAT" />
+
+                    <TextView
+                        android:id="@+id/finalPriceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:text="@string/PRICE"
+                        android:textSize="18sp"
+                        android:textColor="#8B0000"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/finalPrice"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

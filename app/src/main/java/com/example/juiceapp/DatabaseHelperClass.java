@@ -50,10 +50,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-        if (result == -1) {
-            return false;
-        } else
-            return true;
+        return result != -1;
     }
 
     public Product getProductViaID (int id) {
@@ -106,9 +103,10 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
         db.close();
     }
 
-    public Cursor getProduct(String SQL) {
+    public Cursor getAllProductIDs() {
         SQLiteDatabase database = getReadableDatabase();
-        return database.rawQuery(SQL, null);
+        String selectQuery = "SELECT PRODUCT_ID FROM product_table";
+        return database.rawQuery(selectQuery, null);
     }
 
 
