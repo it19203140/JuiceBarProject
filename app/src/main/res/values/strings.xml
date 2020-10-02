@@ -120,10 +120,10 @@
     <string name="product_update_title">Update Product</string>
     <string name="update_product_to_db">Update</string>
     <string name="final_price">Price Calculation</string>
-    <string name="vat">VAT of 2%</string>
+    <string name="vat">VAT of 5%</string>
     <string name="cost_of_production">Cost of ingredients</string>
-    <string name="margin">Margin of 5%</string>
-    <string name="service_tax">Service Tax of 5%</string>
+    <string name="margin">Margin of 15%</string>
+    <string name="service_tax">For service 8%</string>
     <string name="selling_price">Selling Price</string>
     <string name="entered_price">Entered Price</string>
 </resources>

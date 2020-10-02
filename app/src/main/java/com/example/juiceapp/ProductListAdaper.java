@@ -53,7 +53,7 @@ public class ProductListAdaper extends ArrayAdapter<Product> {
         TextView tvType = convertView.findViewById(R.id.AdaperViewProductType);
 
         double [] arr = new double[4];
-        arr = Product.calculateProductPrice(Double.parseDouble(price), 2,5,5);
+        arr = Product.calculateProductPrice(Double.parseDouble(price), 5,15,8);
 
         int priceCount = Product.sellingPrice(arr);
 

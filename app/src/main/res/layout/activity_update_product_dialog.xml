@@ -50,7 +50,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="40dp"
         android:hint="@string/PRICE"
-        android:inputType="number"/>
+        android:inputType="numberDecimal"/>
 
     <EditText
         android:id="@+id/updateProductIngredients"
@@ -70,7 +70,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="40dp"
         android:hint="@string/RATING"
-        android:inputType="text" />
+        android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/updateProductBtn"

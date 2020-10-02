@@ -13,9 +13,9 @@ public class Product {
         double[] arr = new double[4];
 
         arr[0] = price;
-        arr[1] = arr[0] + (arr[0] * margin)/100;
-        arr[2] = arr[1] + (arr[1] * serviceTax)/100;
-        arr[3] = arr[2] + (arr[2] * vat)/100;
+        arr[1] = (arr[0] * margin)/100;
+        arr[2] = (arr[0] * serviceTax)/100;
+        arr[3] = (arr[0] * vat)/100;
 
         return arr;
     }

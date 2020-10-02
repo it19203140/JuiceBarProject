@@ -31,7 +31,7 @@ public class PeekProductActivity extends AppCompatActivity {
         textViewProdPrice.setText(productPrice);
         textViewProdIng.setText(productIngredients);
 
-        textViewEnteredPrice.setText(productPrice);
+        textViewEnteredPrice.setText("Rs. "+productPrice);
 
         //getting calculation values through the static function
         double vat = 2;
@@ -42,10 +42,10 @@ public class PeekProductActivity extends AppCompatActivity {
         taxValues = Product.calculateProductPrice(Double.parseDouble(productPrice),vat,margin,serviceTax);
         int sellingPrice = Product.sellingPrice(taxValues);
 
-        textViewMargin.setText(String.valueOf(taxValues[1]));
-        textViewServiceTax.setText(String.valueOf(taxValues[2]));
-        textViewVAT.setText(String.valueOf(taxValues[3]));
-        textViewSellingPrice.setText(String.valueOf(sellingPrice));
+        textViewMargin.setText("Rs. "+ Math.round(taxValues[1]));
+        textViewServiceTax.setText("Rs. "+ Math.round(taxValues[2]));
+        textViewVAT.setText("Rs. "+ Math.round(taxValues[3]));
+        textViewSellingPrice.setText("Rs. "+ sellingPrice);
     }
 
     private void initializeObjects() {
