@@ -2,4 +2,6 @@
     <string name="app_name">Inquiry200</string>
     <string name="add_inquiry">Add Inquiry</string>
     <string name="view_inquiries">View Inquiries</string>
+    <string name="add_inquiry1">Mats Hummels</string>
+    <string name="view_inquiries2">Jerome Boateng</string>
 </resources>
