@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textColor="#000"
+        android:background="#FFFFFF"
+        android:id="@+id/text_id"
+        android:layout_margin="10dp"
+        android:textSize="18dp"
+        android:text="Id"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="#000"
+        android:background="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/edittext_name"
+        android:text="Name"
+        android:layout_margin="5dp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:background="#FFFFFF"
+        android:id="@+id/edittext_email"
+        android:text="Email"
+        android:layout_margin="5dp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="#FFEB3B"
+            android:id="@+id/button_edit"
+            android:layout_weight="2"
+            android:text="Edit"
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:layout_margin="2dp"
+            android:background="#FFEB3B"
+            android:id="@+id/button_delete"
+            android:layout_weight="2"
+            android:text="Delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_margin="5dp"
+        android:background="#B51919"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>
