@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Juice Bar</string>
+    <string name="username">UserName</string>
+    <string name="password">Password</string>
+
+    <string name="not_registered">Not Registered?</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="reenter_password">ReEnter Password</string>
+    <string name="confirmpassword">ConfirmPassword</string>
+    <string name="contact">Contact</string>
+    <string name="already_registered">Already Registered?</string>
+    <string name="login">Login</string>
+    <string name="title_activity_home1">HomeActivity1</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main3">MainActivity</string>
+    <string name="full_name">Full Name</string>
+    <string name="error">Error</string>
+    <string name="Ok">Ok</string>
+    <string name="can_not">Cannot Create New Account</string>
+    <string name="can_not_login">Invalid Login Credentials</string>
+    <string name="can_not_use_username">UserName is already in Use</string>
+    <string name="Welcome">Welcome</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_details">Save Details</string>
+    <string name="saveprofiledetails">SaveProfileDetails</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_profile1">Edit Profile Unsucessfull</string>
+    <string name="log_out">Log Out</string>
+
+</resources>
