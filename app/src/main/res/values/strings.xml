@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Inquiry200</string>
+    <string name="add_inquiry">Add Inquiry</string>
+    <string name="view_inquiries">View Inquiries</string>
+</resources>
