@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        //DEFAULT FRAGMENT
+
 
         MainFragment fragment = new MainFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
