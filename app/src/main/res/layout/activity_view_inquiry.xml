@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:focusableInTouchMode="true"
     android:layout_height="match_parent"
-    tools:context=".ViewInquiryActivity">
+    tools:context=".ViewInquiryActivity"
+    android:background="@color/cardview_dark_background">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
