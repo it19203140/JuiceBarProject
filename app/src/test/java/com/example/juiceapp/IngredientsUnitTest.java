@@ -22,7 +22,6 @@ public class IngredientsUnitTest {
         expectedList.add(new IngrediantModelClass(4, "Mint", "5", "AAA Supplies", "2020/3/5"));
 
         actualList = ingrediantsDatabaseHelperClass.getEmployeeList();
-
         assertEquals(expectedList, actualList);
     }
 }
