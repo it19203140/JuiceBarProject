@@ -9,18 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PeekProductActivity">
-
-        </activity>
-        <activity android:name=".ViewProducts"></activity>
-        <activity android:name=".AdminHome_Dashboard">
+        <activity android:name=".ViewInquiryActivity"></activity>
+        <activity android:name=".InquiryMainActivity" />
+        <activity android:name=".IngrediantViewActivity" />
+        <activity android:name=".IngrediantMainActivity" />
+        <activity android:name=".AdminWelcomeActivity" />
+        <activity android:name=".AdminMainActivity2" />
+        <activity android:name=".AdminMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InsertProduct"></activity>
+        <activity android:name=".AdminEditProfileActivity" />
+        <activity android:name=".PeekProductActivity" />
+        <activity android:name=".ViewProducts" />
+        <activity android:name=".AdminHome_Dashboard" />
+        <activity android:name=".InsertProduct" />
     </application>
 
 </manifest>

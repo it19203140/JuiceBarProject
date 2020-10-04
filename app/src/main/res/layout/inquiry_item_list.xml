@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_dark_background">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="12dp"
+        android:clickable="true"
+        android:elevation="6dp"
+        android:focusable="true"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp">
+        <LinearLayout
+            android:background="@color/lighterLilac"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:padding="15dp">
+
+    <TextView
+        android:textColor="#000"
+        android:backgroundTint="@color/Ash"
+        android:textAlignment="center"
+        android:background="#FFFFFF"
+        android:id="@+id/text_id"
+        android:layout_margin="5dp"
+        android:textSize="18dp"
+        android:text="Id"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="#000"
+        android:background="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/edittext_name"
+        android:text="Name"
+        android:backgroundTint="@color/Ash"
+        android:layout_margin="5dp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:backgroundTint="@color/Ash"
+        android:background="#FFFFFF"
+        android:id="@+id/edittext_email"
+        android:text="Email"
+        android:layout_margin="5dp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="@drawable/text_view_border"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="15dp"
+            android:id="@+id/button_edit"
+            android:padding="20dp"
+            android:layout_weight="2"
+            android:text="Edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:background="@drawable/text_view_border"
+            android:id="@+id/button_delete"
+            android:layout_marginTop="16dp"
+            android:layout_weight="2"
+            android:text="Delete"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+            </LinearLayout>
+        </LinearLayout>
+            </androidx.cardview.widget.CardView>
+    <View
+        android:layout_margin="5dp"
+        android:background="#B51919"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

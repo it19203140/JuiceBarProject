@@ -21,16 +21,16 @@
             android:layout_marginTop="32dp"
             android:layout_marginRight="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:alpha="1"
-                android:background="@color/lighterLilac"
-                android:padding="20dp"
-                android:text="@string/dashboard"
-                android:textSize="30sp">
 
-            </TextView>
+            <TextView
+                android:id="@+id/textview_Welcome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:text="@string/Welcome"
+                android:textColor="#0F1010"
+                android:textSize="40dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="80dp"
@@ -201,6 +201,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewEditProfileID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -213,7 +214,6 @@
                 android:focusable="true">
 
                 <LinearLayout
-                    android:id="@+id/cardViewEditProfileID"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -269,6 +269,9 @@
                         android:text="@string/aboutUs"
                         android:textColor="@color/darkestViolet"
                         android:textSize="18sp" ></TextView>
+
+
+
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

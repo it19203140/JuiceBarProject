@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".InquiryMainActivity"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/darkestViolet"
+        android:alpha="0.90">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@color/lighterLilac"
+            android:alpha="0.90">
+
+                <EditText
+                    android:id="@+id/edittext_name"
+                    android:layout_margin="25dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:hint="Place Your Inquiry"
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <EditText
+                    android:id="@+id/edittext_email"
+                    android:layout_margin="25dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:hint="Your Email"
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp"
+                    android:layout_gravity="center"
+                    android:background="#FFEB3B"
+                    android:padding="15dp"
+                    android:text="@string/add_inquiry"
+                    android:id="@+id/button_add" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:layout_gravity="center"
+                    android:background="#FFEB3B"
+                    android:padding="15dp"
+                    android:text="@string/view_inquiries"
+                    android:id="@+id/button_view"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+</LinearLayout>
