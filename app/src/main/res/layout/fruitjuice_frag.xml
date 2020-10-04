@@ -1,0 +1,16 @@
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listview_juices"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="16dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.sa.JuiceBar.FruitjuiceFragment">
+
+
+
+
+</ListView>

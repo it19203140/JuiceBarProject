@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fruitshake"
+            android:icon="@drawable/fruitjuicelogo"
+            android:title="Fruit Shake" />
+        <item
+            android:id="@+id/nav_vegjuice"
+            android:icon="@drawable/fruitjuicelogo"
+            android:title="Vegetable Juice" />
+
+
+        <item
+            android:id="@+id/nav_fruitjuice"
+            android:icon="@drawable/fruitjuicelogo"
+            android:title="Fruit Juice" />
+
+    </group>
+
+    <item android:title="Profile">
+        <menu>
+
+            <item
+                android:id="@+id/order_details_drawer"
+                android:icon="@drawable/ic_order_details_24dp"
+                android:title="Order Details" />
+
+
+
+            <item
+                android:id="@+id/Logout"
+                android:icon="@drawable/ic_order_details_24dp"
+                android:title="Logout" />
+
+
+
+        </menu>
+    </item>
+
+</menu>
