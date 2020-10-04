@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SQLiteExample</string>
+    <string name="enter_quantity">Enter Quantity</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_supplier">Enter Supplier</string>
+    <string name="enter_date">Enter Date</string>
+    <string name="view_ingredients">View Ingredients</string>
+    <string name="add_ingredient">Add Ingredient</string>
+    <string name="id">Id</string>
+    <string name="name">Name</string>
+    <string name="date">Date</string>
+    <string name="supplier">Supplier</string>
+    <string name="quantity">Quantity</string>
+</resources>
