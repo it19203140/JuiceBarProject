@@ -26,6 +26,8 @@ public class OrderAdapter extends ArrayAdapter<OrderClass> {
     }
 
     @Override
+
+
     public View getView(final int position, View convertView, ViewGroup parent) {
         View listItemView = convertView;
         if (listItemView == null) {

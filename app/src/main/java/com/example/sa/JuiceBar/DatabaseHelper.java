@@ -30,30 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
 
     }
-    public OrderClass getproductViaID(int OrderNo){
-        SQLiteDatabase db = getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " +KEY_1+ " = " + OrderNo;
 
-        // SQLiteStatement statement = db.compileStatement(selectQuery);
-        //statement.bindString(1, String.valueOf(OrderNo));
-
-        Cursor cursor = db.rawQuery(selectQuery,null);
-        OrderClass order = new OrderClass();
-
-        cursor.moveToFirst();
-        order.setItemid(cursor.getString(0));
-        order.setItemname(cursor.getString(1));
-        order.setItemquantity(cursor.getString(2));
-        order.setItemprice(cursor.getString(3));
-        //order.String iId = cursor.getString(0);
-        //String iName = cursor.getString(1);
-        //String iQuantity = cursor.getString(2);
-        //String iPrice = cursor.getString(3);
-
-        cursor.close();
-        return order;
-
-    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
@@ -61,8 +38,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
         onCreate(db);
     }
-
-
 
 
     public boolean Add_to_Cart(String Name,String Quantity,String Price){
@@ -74,16 +49,41 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         double check = db.insert(TABLE_NAME,null,contentValues1);
         return check != -1;
 
+    }
 
+    public OrderClass getproductViaID(int OrderNo){
+        SQLiteDatabase db = getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " +KEY_1+ " = " + OrderNo;
+
+
+
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        OrderClass order = new OrderClass();
+
+        cursor.moveToFirst();
+        order.setItemid(cursor.getString(0));
+        order.setItemname(cursor.getString(1));
+        order.setItemquantity(cursor.getString(2));
+        order.setItemprice(cursor.getString(3));
+
+
+        cursor.close();
+        return order;
 
     }
+
+    public Cursor getDataa(String sql){
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql,null);
+    }
+
     public Cursor Get_OrderDetails() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor data = db.rawQuery("SELECT * FROM "+ TABLE_NAME, null);
         return data;
     }
 
-    public void deleteData(int OrderNo){
+    public  void deleteData(int OrderNo){
         SQLiteDatabase database = getWritableDatabase();
 
         String sql = "DELETE FROM OrderDetails WHERE OrderNo=?";
@@ -96,10 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         database.close();
     }
 
-    public Cursor getDataa(String sql){
-        SQLiteDatabase database = getReadableDatabase();
-        return database.rawQuery(sql,null);
-    }
+
     public void updateProduct(String id, String qty) {
         SQLiteDatabase database = getWritableDatabase();
         String updateQuery = "UPDATE OrderDetails SET ItemQuantity = ? WHERE OrderNo = ?";

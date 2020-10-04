@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -127,12 +128,19 @@ public class OrderPage extends AppCompatActivity {
                 String itemQty = editQty.getText().toString().trim();
 
                 //OrderClass order = new OrderClass(orderNo, itemName, itemPrice, itemQty);
-
+                if(TextUtils.isEmpty(itemQty)){
+                    Toast.makeText(OrderPage.this,"please enter your quantity",Toast.LENGTH_SHORT).show();
+                }
+                else if(Integer.parseInt(itemQty ) <= 0){
+                    Toast.makeText(OrderPage.this,"please enter your quantity above 0",Toast.LENGTH_SHORT).show();
+                }
+                else{
                 mydb.updateProduct(orderNo, itemQty);
                 dialog.dismiss();
                 Toast.makeText(OrderPage.this, "Updated QTY", Toast.LENGTH_SHORT).show();
 
                 updateArray();
+                }
             }
         });
     }

@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class CalculationTest {
 
     @Test
@@ -11,4 +12,6 @@ public class CalculationTest {
         int result = Calculation.calculateFinal(200,4);
         assertEquals(800,result);
     }
+
+
 }

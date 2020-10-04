@@ -98,7 +98,7 @@ public class FruitjuiceAdapter extends ArrayAdapter<FruitjuiceClass> {
             public void onClick(View view) {
 
 
-                //cart_btn.setEnabled(false);
+
                 pos = (Integer)view.getTag();
                 if(quantity != 0) { //if quan < 0 or equals to 0
                     if (pos == 0) {
@@ -188,7 +188,8 @@ public class FruitjuiceAdapter extends ArrayAdapter<FruitjuiceClass> {
                     }
 
 
-                } else {  Toast.makeText(getContext(), "Quantity value can't be zero or lesser!!!", Toast.LENGTH_SHORT).show();
+                } else
+                    {  Toast.makeText(getContext(), "Quantity value can't be zero or lesser!!!", Toast.LENGTH_SHORT).show();
 
                     int j = 0;
                     Toast.makeText(getContext(), "" + order_details[j] + "\n" + order_details[j+1] + "\n"+ order_details[j+2] + "\n" + order_details[j+3], Toast.LENGTH_LONG).show();
